@@ -29,17 +29,34 @@
 
 <!-- <input id="pLocation" placeholder="Current Location"> -->
 <!-- <button (click)="getCurrentLocation()">Get Current Location</button> -->
+ 
  <div id="location_main">
 
      <div *ngIf="!locationRequested" id="location">
          <p>We need your location to show nearby emergency services. Please click below to allow location access.</p>
         </div>
-        <p *ngIf="loding"> Loding.....</p>
+        <p *ngIf="loading"> Loding.....</p>
         <button (click)="requestLocation()" id="allow_location"> Allow Location</button>
         
         <div *ngIf="locationRequested && latitude && longitude">
-            <p> 📍Latitude: {{ latitude }}</p>
-            <p>Longitude: {{ longitude }}</p>
+            <!-- <p> 📍Latitude: {{ latitude }}</p>
+            <p>Longitude: {{ longitude }}</p> -->
+             <div>
+                <div>
+                    <p> naem </p>
+                    <p> naem </p>
+                    <p> naem </p>
+                </div>
+                <div>
+
+                </div>
+                <div>
+                    
+                </div>
+             </div>
+            <button id="nearHospital" (click)="getNearHospital()">
+                Find Nearest Hospital
+            </button>
         </div>
         
         <div *ngIf="error" style="color:red;">

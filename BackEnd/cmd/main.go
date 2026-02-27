@@ -36,6 +36,7 @@ func main() {
 
 	// Example: Get user profile (Requires Token)
 	protected.HandleFunc("/profile", handlers.GetProfile).Methods("GET")
+	protected.HandleFunc("/nearest-hospital", handlers.FindNearestHospital).Methods("POST")
 
 	// Example: Create an emergency request (Requires Token)
 	// protected.HandleFunc("/emergency", handlers.CreateEmergency).Methods("POST")
