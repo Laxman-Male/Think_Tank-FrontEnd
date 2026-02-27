@@ -1,0 +1,190 @@
+/* --- Global Reset & Page Styling --- */
+* {
+    box-sizing: border-box; /* Crucial for padding/border not affecting width */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Font family - use system-ui for a clean look */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #f7f9fc; /* Off-white page background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Take full height of viewport */
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 900px; /* Sensible maximum size for the card */
+    padding: 20px;
+}
+
+/* --- Card Styling (`#emergencyForm`) --- */
+#emergencyForm.card {
+    background-color: #ffffff; /* White card background */
+    border-radius: 12px; /* Rounded card corners */
+    padding: 2.5rem; /* Inner spacious padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    border: 1px solid #e1e4e8; /* Light border */
+    gap: 14px;
+}
+
+/* --- Title Styling (`h2`) --- */
+#emergencyForm h2 {
+    color: #e31e34; /* Title text color red */
+    font-size: 1.8rem;
+    font-weight: 500; /* Medium font weight */
+    margin-bottom: 2rem; /* Vertical space below title */
+}
+
+/* --- Form Field Wrapper Styling --- */
+.form-field {
+    width: 100%;
+    margin-bottom: 1.25rem; /* Vertical space between fields */
+}
+
+/* --- General Input, Select & Textarea Fields (`input`, `select`, `textarea`) --- */
+#emergencyForm input,
+#emergencyForm select,
+#emergencyForm textarea {
+    display: block;
+    width: 100%; /* Take full width of parent card */
+    padding: 12px 16px; /* Consistent inner spacious padding */
+    border: 1px solid #e1e4e8; /* Light grey field border */
+    border-radius: 6px; /* Slightly rounded corners for fields */
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff; /* White background for fields */
+    transition: border-color 0.2s, box-shadow 0.2s; /* Basic focus transition */
+}
+
+#emergencyForm input::placeholder,
+#emergencyForm select::placeholder,
+#emergencyForm textarea::placeholder {
+    color: #a0a8b3; /* Light grey placeholder text color */
+}
+
+#emergencyForm input:focus,
+#emergencyForm select:focus,
+#emergencyForm textarea:focus {
+    outline: none;
+    border-color: #00bcd4; /* Focus border color cyan */
+    box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.1); /* Subtle cyan focus glow */
+}
+
+/* --- Specific Field Styling --- */
+#emergencyForm input[type="number"] {
+    -webkit-appearance: textfield; /* Standard look for number age field */
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+#emergencyForm textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Select styling to match Image 2's distinct dropdown arrow */
+#emergencyForm select {
+    appearance: none; /* Hide default dropdown arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23a0a8b3"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>'); /* Custom dropdown arrow SVG */
+    background-repeat: no-repeat;
+    background-position: right 16px center; /* Position the arrow */
+    background-size: 20px;
+    padding-right: 48px; /* Extra padding to avoid arrow-text collision */
+}
+
+/* --- Location Area (Source 1 preserved text) --- */
+.location-area {
+    margin-bottom: 1.25rem;
+}
+
+.location-area p {
+    font-size: 0.9rem;
+    color: #666; /* Subtler descriptive text */
+}
+
+/* --- Primary Button (`button.primary`) --- */
+#emergencyForm button.primary {
+    background-color: #00bcd4; /* Main color cyan */
+    color: #ffffff; /* White text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Spacious but small-medium padding */
+    border-radius: 4px; /* Slightly rounded corners for small small button */
+    font-size: 1rem;
+    font-weight: 600; /* Medium-bold text */
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s; /* Subtle hover transition */
+    display: inline-block; /* Be small, sit on the side */
+}
+
+#emergencyForm button.primary:hover {
+    background-color: #00acc1; /* Darker cyan on hover */
+}
+
+#emergencyForm button.primary:active {
+    background-color: #0097a7; /* Deeper cyan on click */
+    transform: translateY(1px); /* Slight click feedback */
+}
+
+/* Additional layout for button alignment */
+.button-row {
+    text-align: left; /* Small button positioned to the left */
+}
+
+#img_div{
+    /* border: 1px solid rebeccapurple; */
+    font-weight: 600;
+    font-size: 20px;
+    background: linear-gradient(red,rgb(249, 49, 49));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: white;
+}
+#img_div img{
+    mix-blend-mode: difference;
+    padding: 0px;
+    margin: 0px;
+}
+#pGender option{
+    border: 1px solid red;
+}
+#location{
+    border: 1px solid rgb(244, 138, 138);
+    padding: 7px 15px;
+    border-radius: 20px;
+    width: 500px;
+}
+#location p{
+font-weight: 500;
+}
+#location_main{
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+}
+#allow_location{
+    border: 1px solid red;
+    background-color: rgb(250, 189, 189);
+    padding: 5px 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    animation: pulse 1s infinite;
+    /* color: white; */
+}
+#allow_location:hover{
+   cursor: pointer;
+   color: white;
+   background-color: red;
+}
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(255,23,68,0.7);}
+70%{box-shadow:0 0 0 20px rgba(255,23,68,0);}
+100%{box-shadow:0 0 0 0 rgba(255,23,68,0);}
+}
