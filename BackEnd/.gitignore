@@ -1,0 +1,17 @@
+# Binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+
+# Dependency directories
+vendor/
+
+# Configuration and Security
+.env
+
+# IDEs
+.vscode/
+.idea/
