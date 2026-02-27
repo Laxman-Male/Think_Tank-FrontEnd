@@ -1,0 +1,53 @@
+<div class="login-page">
+  <div class="branding-section">
+    <div class="branding-content">
+      <img src="assets/medical-hero.svg" alt="Emergency Support" class="hero-image">
+      <h1 class="brand-title">Think Tank NAV</h1>
+      <p class="brand-subtitle">Real-time coordination for emergency medical response and hospital capacity management.</p>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="form-card">
+      <div class="form-header">
+        <h2>Register or Login</h2>
+        <p>Enter your credentials to access the dashboard</p>
+
+        <div class="type_of_user">
+    <div (click)="setUserType('User')" [class.active]="userType === 'User'">User</div>
+    <div (click)="setUserType('Hospital')" [class.active]="userType === 'Hospital'">Hospital</div>
+  </div>
+      </div>
+
+      <form class="auth-form">
+        <div class="input-group">
+          <label>Email Address</label>
+        <input type="email" 
+           [placeholder]="userType === 'Hospital' ? 'abc@hospital.com' : 'abc@gmail.com'">
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" placeholder="••••••••">
+        </div>
+
+        <button type="submit" class="btn-primary">Continue</button>
+      </form>
+
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <div class="social-login">
+        <button class="btn-social">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google">
+          Continue with Google
+        </button>
+      </div>
+
+      <p class="legal-text">
+        By continuing, you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>.
+      </p>
+    </div>
+  </div>
+</div>
