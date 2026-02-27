@@ -25,6 +25,12 @@
 
       <form class="auth-form" (ngSubmit)="onSubmit()">
         <div class="input-group">
+          <label>Mobile</label>
+        <input  type="tel"  [(ngModel)]="loginData.mobile" name="mobile"
+            placeholder="Mobile Number" maxlength="10"
+       pattern="[0-9]{10}">
+        </div>
+        <div class="input-group">
           <label>Email Address</label>
         <input type="email"  [(ngModel)]="loginData.email" name="email"
            [placeholder]="userType === 'Hospital' ? 'abc@hospital.com' : 'abc@gmail.com'">

@@ -18,6 +18,7 @@ export class LoginComponent {
   userType: 'User' | 'Hospital' = 'User'; // Default selection
 
   loginData = {
+    mobile:'',
     email: '',
     password: '',
     role: 'User',
@@ -30,6 +31,8 @@ export class LoginComponent {
 
  onSubmit() {
   if(this.loginData.isNewUser==true){
+    console.log(this.loginData)
+    // return
    this.authService.register(this.loginData).subscribe({
       next: (response) => {
         // Save the JWT sent by your Go backend
@@ -57,7 +60,7 @@ export class LoginComponent {
         if (this.userType === 'Hospital') {
           this.router.navigate(['/hospital-dashboard']);
         } else {
-          this.router.navigate(['/sos-dashboard']);
+          this.router.navigate(['']);
         }
       },
       error: (err) => {
