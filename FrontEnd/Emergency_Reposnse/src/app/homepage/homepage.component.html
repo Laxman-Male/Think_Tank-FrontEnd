@@ -20,6 +20,7 @@
         <li onclick="scrollToSection('about')">About</li>
         <li onclick="scrollToSection('feedback')">Feedback</li>
         <li onclick="scrollToSection('contact')">Contact Us</li>
+        <li (click)="go_to_profile()" > <i class="fa-solid fa-circle-user" id="profile"></i> </li>
     </ul>
 </nav>
 
@@ -30,7 +31,7 @@
             Rakshak24 AI connects patients, ambulances and hospitals in real-time
             to save lives faster using intelligent prediction and smart tracking.
         </p>
-        <button class="btn" onclick="scrollToSection('about')">Explore Features</button>
+        <button class="btn" (click)="go_to_feature()">Explore Features</button>
     </div>
 </section>
 
