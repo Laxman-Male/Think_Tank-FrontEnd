@@ -1,0 +1,50 @@
+<div id="img_div">
+     <img src="assets/image.png" alt="Emergency Support" class="hero-image" width="80px"> Rakshak24
+</div>
+<div id="emergencyForm" class="card hidden">
+<h2 >🚨 Patient Details</h2>
+
+<input id="pName" placeholder="Patient Name">
+<input id="pAge" type="number" placeholder="Age">
+
+<select id="pGender">
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<select id="pBlood">
+<option>A+</option><option>A-</option>
+<option>B+</option><option>B-</option>
+<option>AB+</option><option>AB-</option>
+<option>O+</option><option>O-</option>
+</select>
+
+<select id="pType">
+<option>Accident</option>
+<option>Heart Attack</option>
+<option>Labour Pain</option>
+<option>Other</option>
+</select>
+
+<!-- <input id="pLocation" placeholder="Current Location"> -->
+<!-- <button (click)="getCurrentLocation()">Get Current Location</button> -->
+ <div id="location_main">
+
+     <div *ngIf="!locationRequested" id="location">
+         <p>We need your location to show nearby emergency services. Please click below to allow location access.</p>
+        </div>
+        <p *ngIf="loding"> Loding.....</p>
+        <button (click)="requestLocation()" id="allow_location"> Allow Location</button>
+        
+        <div *ngIf="locationRequested && latitude && longitude">
+            <p> 📍Latitude: {{ latitude }}</p>
+            <p>Longitude: {{ longitude }}</p>
+        </div>
+        
+        <div *ngIf="error" style="color:red;">
+            <p>{{ error }}</p>
+        </div>
+</div>
+
+<!-- <button class="primary" onclick="submitEmergency()">Submit Emergency</button> -->
