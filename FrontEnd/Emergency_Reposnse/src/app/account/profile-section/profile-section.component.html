@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="index.css"> -->
+</head>
+<body>
+
+    <div class="container">
+    <p id="backBtn" (click)="goToHome()"> <i class="fa-solid fa-circle-arrow-left"></i> </p>
+
+    <!-- ACCOUNT -->
+    <section class="card">
+        <h3 class="section-title">
+            <i class="fa-regular fa-user"></i> Personal Information
+        </h3>
+
+        <div class="profile">
+            <div class="avatar">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <div>
+                <h4>Email: {{UserProfile?.email}}</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="card">
+        <h3 class="section-title">Contact</h3>
+        <p><i class="fa-solid fa-phone icon" ></i>&nbsp;  {{UserProfile?.mobile}} </p>
+        <p><i class="fa-regular fa-user" ></i> &nbsp;  Role: {{UserProfile?.role}}  </p>
+    </section>
+
+    <!-- GOVERNMENT ID 
+    <section class="card">
+        <h3 class="section-title">
+            <i class="fa-solid fa-id-card"></i> Government ID
+        </h3>
+        <p>Aadhar: XXXX XXXX 5678</p>
+    </section>
+-->
+    <!-- ADDRESS -->
+    <section class="card">
+        <h3 class="section-title">
+            <i class="fa-solid fa-location-dot icon"></i> Address
+        </h3>
+        <p>
+            123 Main Street, Downtown <br>
+            Mumbai, Maharashtra – 400001
+        </p>
+    </section>
+
+    <!-- COUPONS -->
+    <section class="card">
+        <h3 class="section-title">
+            <i class="fa-solid fa-gift"></i> Available Coupons
+        </h3>
+
+        <div class="coupon" onclick="applyCoupon('SAVE20')">
+            <div>
+                <h4>SAVE20</h4>
+                <p>Get 20% off on your next ride</p>
+            </div>
+            <span class="badge">20% off</span>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('FIRST50')">
+            <div>
+                <h4>FIRST50</h4>
+                <p>First ride special</p>
+            </div>
+            <span class="badge">₹50 off</span>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('WEEKEND30')">
+            <div>
+                <h4>WEEKEND30</h4>
+                <p>Weekend rides discount</p>
+            </div>
+            <span class="badge">30% off</span>
+        </div>
+
+        <div class="coupon" onclick="applyCoupon('MONTHLY100')">
+            <div>
+                <h4>MONTHLY100</h4>
+                <p>Monthly subscription discount</p>
+            </div>
+            <span class="badge">₹100 off</span>
+        </div>
+    </section>
+
+    <!-- LINKS -->
+    <section class="card links">
+        <p onclick="simpleAction('FAQs')"><i class="fa-regular fa-circle-question"></i> FAQs</p>
+        <p onclick="simpleAction('Terms')"><i class="fa-regular fa-file"></i> Terms & Conditions</p>
+        <p onclick="simpleAction('Privacy')"><i class="fa-solid fa-user-lock"></i> Privacy Policy</p>
+    </section>
+
+    <!-- LOGOUT -->
+    <section class="logout" onclick="logoutUser()">
+        <i class="fa-solid fa-right-from-bracket"></i> Log Out
+    </section>
+
+</div>
+
+<!-- <script src="index.js"></script> -->
+</body>
+</html>
+
+
+

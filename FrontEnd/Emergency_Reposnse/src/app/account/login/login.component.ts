@@ -54,6 +54,7 @@ export class LoginComponent {
    this.authService.login(this.loginData).subscribe({
       next: (response) => {
         // Save the JWT sent by your Go backend
+        
         localStorage.setItem('token', response.token);
         
         // Redirect based on the role to solve "real-time coordination"

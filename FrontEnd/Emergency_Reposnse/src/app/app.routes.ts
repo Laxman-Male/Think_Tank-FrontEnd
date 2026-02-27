@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './account/login/login.component';
+import { Component } from 'lucide-angular';
+import { ProfileSectionComponent } from './account/profile-section/profile-section.component';
 
 export const routes: Routes = [
     {
@@ -10,5 +12,9 @@ export const routes: Routes = [
     {
         path: 'login',
         component:LoginComponent
+    },
+    {
+        path:'profile',
+        component:ProfileSectionComponent
     }
 ];

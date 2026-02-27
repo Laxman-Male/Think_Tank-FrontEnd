@@ -34,6 +34,15 @@ func main() {
 	protected.Use(middleware.JWTMiddleware)
 	// Add your protected handlers here
 
+	// Example: Get user profile (Requires Token)
+	protected.HandleFunc("/profile", handlers.GetProfile).Methods("GET")
+
+	// Example: Create an emergency request (Requires Token)
+	// protected.HandleFunc("/emergency", handlers.CreateEmergency).Methods("POST")
+
+	// Example: List all ambulances (Requires Token)
+	// protected.HandleFunc("/ambulances", handlers.ListAmbulances).Methods("GET")
+
 	// 2. Add the CORS configuration here
 	// This solves the 'strict-origin-when-cross-origin' error
 	c := cors.New(cors.Options{
