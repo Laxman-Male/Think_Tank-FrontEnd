@@ -17,21 +17,26 @@
     <div (click)="setUserType('User')" [class.active]="userType === 'User'">User</div>
     <div (click)="setUserType('Hospital')" [class.active]="userType === 'Hospital'">Hospital</div>
   </div>
+  <div>
+    <input type="checkbox" for="newUser" name="newUser" [(ngModel)]="loginData.isNewUser">
+    <label for="newUser">New User</label>
+  </div>
       </div>
 
-      <form class="auth-form">
+      <form class="auth-form" (ngSubmit)="onSubmit()">
         <div class="input-group">
           <label>Email Address</label>
-        <input type="email" 
+        <input type="email"  [(ngModel)]="loginData.email" name="email"
            [placeholder]="userType === 'Hospital' ? 'abc@hospital.com' : 'abc@gmail.com'">
         </div>
 
         <div class="input-group">
           <label>Password</label>
-          <input type="password" placeholder="••••••••">
+          <input type="password" name="password"
+      [(ngModel)]="loginData.password"  placeholder="••••••••">
         </div>
 
-        <button type="submit" class="btn-primary">Continue</button>
+        <button type="submit" class="btn-primary" (click)="onSubmit()">Continue</button>
       </form>
 
       <div class="divider">
