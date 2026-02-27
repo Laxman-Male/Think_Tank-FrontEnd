@@ -41,22 +41,34 @@
         <div *ngIf="locationRequested && latitude && longitude">
             <!-- <p> 📍Latitude: {{ latitude }}</p>
             <p>Longitude: {{ longitude }}</p> -->
-             <div>
-                <div>
-                    <p> naem </p>
+             <!-- <div >
+                <div id="hospitalList" >
+                    <p > naem </p>
                     <p> naem </p>
                     <p> naem </p>
                 </div>
-                <div>
+                 
+             </div> -->
+<div id="findnearme">
 
-                </div>
-                <div>
-                    
-                </div>
-             </div>
-            <button id="nearHospital" (click)="getNearHospital()">
-                Find Nearest Hospital
-            </button>
+    <button id="nearHospital" (click)="getNearHospital()">
+        Find Nearest Hospital
+    </button>
+</div>
+
+             <div *ngIf="nearestHospitals.length > 0" id="hospitalList">
+                    <h3 style="font-weight: 700; color: black;">Nearest Hospitals:</h3>
+                    <div *ngFor="let hospital of nearestHospitals" class="card">
+                        <p style="color: red; font-weight: 500;"><strong>🏥{{ hospital.hospital_name }}</strong></p>
+                        <p>Available Ambulances: <b> {{ hospital.available_ambulances }} </b> </p>
+                        <p>Distance: <b> {{ hospital.distance | number:'1.2-2' }} km </b> </p>
+                    </div>
+                    </div>
+
+                    <div *ngIf="nearestHospitals.length === 0 && locationRequested">
+                    <p>No nearby hospitals found.</p>
+                    </div>
+
         </div>
         
         <div *ngIf="error" style="color:red;">

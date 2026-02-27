@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LocationService } from '../service/services/location.service';
+import { Hospital } from '../model/getLocation';
 
 @Component({
   selector: 'app-emergency-form',
@@ -16,6 +17,7 @@ export class EmergencyFormComponent {
   error: string | null = null;
   locationRequested: boolean = false;
   loading: boolean = false;
+  nearestHospitals: Hospital[] = [];
 
   constructor(private hospitalService: LocationService) {}
 
@@ -73,7 +75,8 @@ export class EmergencyFormComponent {
 
     this.hospitalService.findNearestHospital(lat, lng)
       .subscribe({
-        next: (res) => {
+        next: (res:any) => {
+          this.nearestHospitals=res;
           console.log('Nearest hospital:', res);
         },
         error: (err) => {

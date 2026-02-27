@@ -198,3 +198,33 @@ font-weight: 500;
     font-weight: 500;
 
 }
+
+::ng-deep #hospitalList {
+    border: 1px solid rgb(241, 156, 156);
+    height: 400px;
+    width: 1000px;
+    margin-top: 15px;
+    overflow: auto;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+
+::ng-deep #hospitalList div{
+    border: 1px solid rgb(194, 229, 240);
+    border-bottom: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+::ng-deep #hospitalList h3{
+    margin-bottom: 8px;
+}
+ #findnearme{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
