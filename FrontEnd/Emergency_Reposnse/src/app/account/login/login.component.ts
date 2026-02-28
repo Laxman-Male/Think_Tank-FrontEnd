@@ -21,7 +21,7 @@ export class LoginComponent {
     mobile:'',
     email: '',
     password: '',
-    role: 'User',
+    role: '',
     isNewUser: false
   };
 
@@ -29,7 +29,10 @@ export class LoginComponent {
     this.userType = type;
   }
 
+
  onSubmit() {
+this.loginData.role= this.userType;
+
   if(this.loginData.isNewUser==true){
     console.log(this.loginData)
     // return
@@ -40,9 +43,9 @@ export class LoginComponent {
         
         // Redirect based on the role to solve "real-time coordination"
         if (this.userType === 'Hospital') {
-          this.router.navigate(['/hospital-dashboard']);
+          this.router.navigate(['/hospital']);
         } else {
-          this.router.navigate(['/sos-dashboard']);
+          this.router.navigate(['']);
         }
       },
       error: (err) => {
@@ -51,6 +54,7 @@ export class LoginComponent {
       }
     });
   } else{
+    console.log(this.loginData)
    this.authService.login(this.loginData).subscribe({
       next: (response) => {
         // Save the JWT sent by your Go backend
@@ -59,7 +63,7 @@ export class LoginComponent {
         
         // Redirect based on the role to solve "real-time coordination"
         if (this.userType === 'Hospital') {
-          this.router.navigate(['/hospital-dashboard']);
+          this.router.navigate(['/hospital']);
         } else {
           this.router.navigate(['']);
         }
