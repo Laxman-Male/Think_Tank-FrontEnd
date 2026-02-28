@@ -1,0 +1,21 @@
+
+<div id="main_outer">
+    
+    <div id="available_feature">
+        <p>✅Blood available </p>
+        <p> ✅Bed available </p>
+    </div>
+</div>
+<div id="hospital_details_outer">
+
+    <div id="hospital_details">
+        
+        <h2>🏥{{ hospital?.hospital_name }}</h2>
+        <p>Available Ambulances: <b> {{ hospital?.available_ambulances }} </b></p>
+        <p>Distance: <b> {{ hospital?.distance  }} km </b></p>
+        <p style="margin-left: 30px;"> 🚨Pre-arrival patient alert for doctors </p>
+    </div>
+   <button (click)="submitData()" [disabled]="completeBooking"  [ngClass]="completeBooking ? 'requested-btn' : 'request-btn'">
+  {{ completeBooking ? 'Requested' : 'Request Now' }}
+</button> 
+</div>

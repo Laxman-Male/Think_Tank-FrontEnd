@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feature',
@@ -8,7 +9,17 @@ import { Component } from '@angular/core';
 })
 export class FeatureComponent {
  
+  constructor(private route:Router){}
 
+go_to_emergency_form(){
+let token = localStorage.getItem('token');
+if(token){
+  this.route.navigate(['/emergencyForm'])
+}
+else[
+  this.route.navigate(['/login'])
+]
+}
 // Fake Hospital Data
 // const hospitals=[
 // {name:"CityCare Hospital",beds:5,distance:4},
