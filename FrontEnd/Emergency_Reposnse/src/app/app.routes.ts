@@ -6,6 +6,7 @@ import { ProfileSectionComponent } from './account/profile-section/profile-secti
 import { FeatureComponent } from './feature/feature.component';
 import { EmergencyFormComponent } from './emergency-form/emergency-form.component';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
+import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 
 export const routes: Routes = [
     {
@@ -31,5 +32,9 @@ export const routes: Routes = [
     {
         path:'confirm-booking',
         component:ConfirmBookingComponent
+    },
+    {
+        path:'hospital',
+        component:DoctorDashboardComponent
     }
 ];
