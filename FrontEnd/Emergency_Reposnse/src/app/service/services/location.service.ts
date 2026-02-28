@@ -28,4 +28,22 @@ export class LocationService {
       { headers }
     );
   }
+
+    ConfirmBooking(patientData:any): Observable<Object> {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      // Instead of returning undefined, return an Observable error
+      return throwError(() => new Error('You must login first'));
+    }
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${token}`
+    });
+
+    return this.http.post(`${this.apiUrl}/confirm-booking`, 
+      {  patientData }, 
+      { headers }
+    );
+  }
 }

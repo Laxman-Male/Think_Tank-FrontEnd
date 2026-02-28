@@ -20,4 +20,10 @@ WHERE available_ambulances > 0
 ORDER BY distance ASC
 LIMIT 5;
 `
+
+	ConfirmBooking = `
+                INSERT INTO bookings
+        (user_id,name, age, gender, blood_group, incident_type, hospital_details)
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+        `
 )

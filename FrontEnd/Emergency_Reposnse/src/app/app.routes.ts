@@ -5,6 +5,7 @@ import { Component } from 'lucide-angular';
 import { ProfileSectionComponent } from './account/profile-section/profile-section.component';
 import { FeatureComponent } from './feature/feature.component';
 import { EmergencyFormComponent } from './emergency-form/emergency-form.component';
+import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
 
 export const routes: Routes = [
     {
@@ -26,5 +27,9 @@ export const routes: Routes = [
     {
         path:'emergencyForm',
         component:EmergencyFormComponent
+    },
+    {
+        path:'confirm-booking',
+        component:ConfirmBookingComponent
     }
 ];

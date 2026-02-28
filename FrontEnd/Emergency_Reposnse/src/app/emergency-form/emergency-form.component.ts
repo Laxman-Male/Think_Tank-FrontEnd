@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LocationService } from '../service/services/location.service';
 import { Hospital } from '../model/getLocation';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-emergency-form',
@@ -19,7 +20,13 @@ export class EmergencyFormComponent {
   loading: boolean = false;
   nearestHospitals: Hospital[] = [];
 
-  constructor(private hospitalService: LocationService) {}
+   @ViewChild('pName') pName!: ElementRef;
+  @ViewChild('pAge') pAge!: ElementRef;
+  @ViewChild('pGender') pGender!: ElementRef;
+  @ViewChild('pBlood') pBlood!: ElementRef;
+  @ViewChild('pType') pType!: ElementRef;
+
+  constructor(private hospitalService: LocationService, private route:Router) {}
 
   // Request user's location
   requestLocation(): void {
@@ -84,4 +91,19 @@ export class EmergencyFormComponent {
         }
       });
   }
+
+ goToHospitalDetails(hospital: Hospital) {
+    const patientData = {
+      name: this.pName.nativeElement.value,
+      age: this.pAge.nativeElement.value,
+      gender: this.pGender.nativeElement.value,
+      blood: this.pBlood.nativeElement.value,
+      type: this.pType.nativeElement.value,
+      hospital: hospital
+    };
+
+        localStorage.setItem('patientData', JSON.stringify(patientData));
+        
+  this.route.navigate(['/confirm-booking'], { state: { hospital } });
+}
 }

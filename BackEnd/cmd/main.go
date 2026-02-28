@@ -10,6 +10,7 @@ import (
 	"github.com/joho/godotenv"
 	"github.com/rs/cors"
 
+	repo "emergency-backend/Repo"
 	"emergency-backend/db"
 	"emergency-backend/handlers"
 	"emergency-backend/middleware"
@@ -23,6 +24,7 @@ func main() {
 		log.Fatalf("database connection failed: %v", err)
 	}
 
+	repo.DB = db.Conn
 	r := mux.NewRouter()
 
 	// 1. Define your existing routes
@@ -32,11 +34,14 @@ func main() {
 
 	protected := r.PathPrefix("/api").Subrouter()
 	protected.Use(middleware.JWTMiddleware)
+
 	// Add your protected handlers here
 
 	// Example: Get user profile (Requires Token)
 	protected.HandleFunc("/profile", handlers.GetProfile).Methods("GET")
 	protected.HandleFunc("/nearest-hospital", handlers.FindNearestHospital).Methods("POST")
+
+	protected.HandleFunc("/confirm-booking", handlers.ConfirmBookingHandler).Methods("POST")
 
 	// Example: Create an emergency request (Requires Token)
 	// protected.HandleFunc("/emergency", handlers.CreateEmergency).Methods("POST")
@@ -49,7 +54,7 @@ func main() {
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{"http://localhost:4200"}, // Your Angular app
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
-		AllowedHeaders:   []string{"Authorization", "Content-Type"},
+		AllowedHeaders:   []string{"Authorization", "Content-Type", "Accept", "X-Requested-With"},
 		AllowCredentials: true,
 		Debug:            true, // Set to false in production
 	})

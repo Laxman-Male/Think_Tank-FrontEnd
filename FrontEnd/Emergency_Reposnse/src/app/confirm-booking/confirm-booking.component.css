@@ -1,0 +1,90 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#main_outer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+#available_feature{
+/* border: 1px solid red; */
+display: flex;
+justify-content: space-around;
+width: 90%;
+}
+#available_feature p{
+    border: 1px solid rgb(248, 198, 198);
+    border-radius: 15px;
+    padding: 10px 30px;
+    width: 500px;
+    background-color: rgb(240, 47, 47);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+#hospital_details{
+    border: 1px solid rgb(239, 197, 197);
+      width: 78%;
+      border-radius: 15px;
+    background-color: rgb(226, 223, 223);
+    
+
+}
+
+#hospital_details p{
+   font-size: 20px;
+   margin-left: 45px;
+}
+
+#hospital_details_outer{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  
+}
+#hospital_details_outer button{
+    
+  /* border: 1px solid rgb(248, 198, 198);
+    border-radius: 15px;
+    padding: 10px 30px;
+    width: 200px;
+    background-color: rgb(240, 47, 47);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    animation: pulse 1s infinite; */
+
+}
+
+.request-btn{
+     border: 1px solid rgb(248, 198, 198);
+    border-radius: 15px;
+    padding: 10px 30px;
+    width: 200px;
+    background-color: rgb(240, 47, 47);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+.requested-btn{
+     border: 1px solid rgb(248, 198, 198);
+    border-radius: 15px;
+    padding: 10px 30px;
+    width: 200px;
+    background-color: rgb(76, 76, 76);
+    color: white;
+    font-weight: 600;
+    cursor: not-allowed;
+}
+ 
+
+@keyframes pulse{
+0%{box-shadow:0 0 0 0 rgba(255,23,68,0.7);}
+70%{box-shadow:0 0 0 20px rgba(255,23,68,0);}
+100%{box-shadow:0 0 0 0 rgba(255,23,68,0);}
+}
