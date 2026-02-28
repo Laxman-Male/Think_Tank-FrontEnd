@@ -1,17 +1,114 @@
-<div id="doctorUpperSection">
-    <div>
-adf
-    </div>
-    <div>
-adsf
+<div id="navbar">
+   <p>👨‍⚕️ Doctor Dashboard </p>
+</div>
+<div id="recievingAlert" (click)="openAlert()">
+    <p> Recieving Alert! </p>
+</div>
+
+<!-- Modal Popup -->
+<div *ngIf="showModal" id="modalOverlay" (click)="closeModal()">
+    <div id="modalContent" (click)="$event.stopPropagation()">
+        <div id="modalHeader">
+            <h2>Patient Details</h2>
+            <button id="closeBtn" (click)="closeModal()">✕</button>
+        </div>
+        <div id="modalBody" *ngIf="selectedPatient">
+            <div class="detailRow">
+                <span class="label">Name:</span>
+                <span class="value">Laxman </span>
+            </div>
+            <div class="detailRow">
+                <span class="label">Age:</span>
+                <span class="value">30 years</span>
+            </div>
+            <div class="detailRow">
+                <span class="label">Blood Group:</span>
+                <span class="value">O+</span>
+            </div>
+            <div class="detailRow">
+                <span class="label">Location:</span>
+                <span class="value">Bidar</span>
+            </div>
+        </div>
+        <div id="modalFooter">
+            <button id="acceptBtn" (click)="acceptPatient()">Accept Patient</button>
+            <button id="declineBtn" (click)="closeModal()">Close</button>
+        </div>
     </div>
 </div>
 
-<div>
-    <div>
-asdf
-    </div>
-    <div>
-adf
+<!-- Success Message Modal -->
+<div *ngIf="showSuccessMessage" id="successOverlay">
+    <div id="successContent">
+        <div id="successIcon">✓</div>
+        <h2 id="successTitle">Request Accepted!</h2>
+        <p id="successMessage">Patient request has been accepted successfully.</p>
     </div>
 </div>
+<div id="doctorUpperSection">
+    <div>
+ <h3 style="font-weight: 700;">🩸Blood availability </h3>
+  <p> <b> A+ :</b> 12 Units </p>
+  <p> <b> A- :</b>8 Units </p>
+  <p> <b> B+ :</b>5 Units</p>
+  <p> <b> B- :</b>0 Unit </p>
+  <p> <b> AB+ :</b>1 Unit</p>
+  <p> <b> AB- :</b>2 Units </p>
+    </div>
+    <div id="bedSection">
+ <h3 style="font-weight: 700;">🛏️Bed availability </h3>
+  <p> <b> ICU Beds: </b> 10   </p>
+  <p> <b> General Bed:</b>8   </p>
+  <p> <b> Emergency Bed:</b>3  </p>
+ 
+    </div>
+    
+</div>
+
+<div id="doctorLowerSection">
+      <div id="Summary">
+ <h3 style="font-weight: 700;">📊Patient Summary </h3>
+  <p> <b> Total Emergency Patient Today </b> 9   </p>
+  <p> <b> General Cases: </b>25</p>
+  <p> <b> Stable Cases:</b>16  </p>
+ 
+    </div>
+     
+</div>
+
+<div id="patientList">
+    
+ 
+     <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood</th>
+            <th> Location </th>
+        </tr>
+        <tr>
+            <td>Laxman</td>
+            <td>25</td>
+            <td>A+</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>Shravani</td>
+            <td>30</td>
+            <td>B+</td>
+            <td>Pimpri</td>
+        </tr>
+        <tr>
+            <td>Mansi</td>
+            <td>41</td>
+            <td>O+</td>
+            <td>Hadapsar</td>
+        </tr>
+        <tr>
+            <td>Abhishek</td>
+            <td>30</td>
+            <td>AB-</td>
+            <td>Pune</td>
+        </tr>
+    </table>
+ </div>

@@ -28,6 +28,21 @@ export class EmergencyFormComponent {
 
   constructor(private hospitalService: LocationService, private route:Router) {}
 
+    ngOnInit(){
+ console.log("hello")
+this.isTokenAvailable()
+
+ }
+
+ isTokenAvailable(){
+  let token= localStorage.getItem('token');
+  if(token){
+
+  }else{
+    this.route.navigate(['/login'])
+  }
+ }
+
   // Request user's location
   requestLocation(): void {
     console.log('Requesting location...');

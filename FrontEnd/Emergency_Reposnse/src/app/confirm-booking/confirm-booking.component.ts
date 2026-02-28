@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ConfirmBookingComponent {
 
+  
   hospital: Hospital | undefined;
   completeBooking:boolean=false;
 
@@ -24,7 +25,19 @@ export class ConfirmBookingComponent {
     if (state.hospital) {
       this.hospital = state.hospital;
     }
+    this.isTokenAvailable()
   }
+
+  
+
+ isTokenAvailable(){
+  let token= localStorage.getItem('token');
+  if(token){
+
+  }else{
+    this.router.navigate(['/login'])
+  }
+ }
 submitData(){
   let data = localStorage.getItem('patientData')
   console.log(data)
